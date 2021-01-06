@@ -14,14 +14,14 @@ public class PseudoBash {
     private static File current_dir = new File(System.getProperty("user.dir")).getAbsoluteFile();
 
     public static void help(){
-        System.out.println("===== HELP =====\n");
-        System.out.println("ls               - List information about files");
-        System.out.println("cd [Directory]   - Change Directory");
-        System.out.println("touch [Filename] - Create text file");
-        System.out.println("rm [Filename]    - Delete text file");
-        System.out.println("write [Filename] [Text]   - Write text to file");
-        System.out.println("append [Filename] [Text]   - Write/Rewrite text to file");
-        System.out.println("================\n");
+        System.out.println("+========================= HELP ==========================+");
+        System.out.println("| ls                         List information about files |" );
+        System.out.println("| cd [Directory]             Change Directory             |" );
+        System.out.println("| touch [Filename]           Create text file             |" );
+        System.out.println("| rm [Filename]              Delete text file             |" );
+        System.out.println("| write [Filename] [Text]    Write text to file           |" );
+        System.out.println("| append [Filename] [Text]   Write/Rewrite text to file   |" );
+        System.out.println("+=========================================================+\n" );
     }
 
     public static void ls() {
