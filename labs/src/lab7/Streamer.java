@@ -4,14 +4,15 @@
  *   2. метод, приводящий все строки в списке в верхний регистр
  *   3. метод возвращающий список квадратов всех уникальных элементов списка
  */
+
 package lab7;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
-public class Streamer {
-    public static List<Integer> makeIntegerList(){
+public class Streamer
+{
+    public static List<Integer> makeIntegerList()
+    {
         Random random = new Random();
         List<Integer> numbers = new ArrayList<>();
 
@@ -21,7 +22,8 @@ public class Streamer {
         return numbers;
     }
 
-    public static List<String> makeStringList(){
+    public static List<String> makeStringList()
+    {
         List<String> strings = new ArrayList<>();
 
         strings.add("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
@@ -33,15 +35,30 @@ public class Streamer {
         return strings;
     }
 
-    public static double getAvg(List<Integer> numbers) {
-        return numbers.stream().mapToDouble((number) -> number).average().getAsDouble();
+    public static double getAvg(List<Integer> numbers)
+    {
+        double value = 0;
+        OptionalDouble avg = numbers.stream().mapToDouble((number) -> number).average();
+        try
+        {
+            value = avg.getAsDouble();
+        }
+        catch (NoSuchElementException error)
+        {
+           /*
+            * Операция поиска элемента в объекте одного из контейнерных классов
+            * завершилась неудачей (тип определен в пакете java.util).
+            */
+            System.out.println("Program trow exception: " + error.toString());
+        }
+
+        return value;
     }
 
-    public static List<String> toUpperCase(List<String> strings) {
+    public static List<String> toUpperCase(List<String> strings)
+    {
         List<String> uc_strings = new ArrayList<>();
-
         strings.stream().map(String::toUpperCase).forEach(uc_strings::add);
-
         return uc_strings;
     }
 

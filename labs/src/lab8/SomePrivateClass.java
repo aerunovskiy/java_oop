@@ -2,22 +2,26 @@ package lab8;
 
 public class SomePrivateClass {
     @Repeater
-    private static void sayWoof(){
+    private static void sayWoof()
+    {
         System.out.println("Woof!");
     }
 
     @Repeater(iteration = 2)
-    private static void sayMeow(){
+    public static void sayMeow()
+    {
         System.out.println("Meow!");
     }
 
     @Repeater(iteration = 3)
-    private static void sayOink(){
+    private static void sayOink()
+    {
         System.out.println("Oink!");
     }
 
     @Repeater(iteration = 4)
-    private static void sayMoo(){
+    private static void sayMoo()
+    {
         System.out.println("Moo!");
     }
 }
